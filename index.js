@@ -29,7 +29,7 @@ app.post('/login', async (req, res) => {
           return res.status(400).json({ message: 'Invalid credentials' });
         }
     
-        res.status(200).json({ message: 'Login successful', role: user.user_role });
+        res.status(200).json({ message: 'Login successful', role: user.user_role, email:user.user_email });
       } catch (error) {
         console.error(error);
         res.status(500).json({ message: 'Server error' });
